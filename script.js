@@ -43,11 +43,8 @@ function handleinput() {
   const inputText = document.getElementById("input-text").value;
   const result = converttexttocode(inputText);
   const resultNumberElement = document.getElementById("result-number");
-  
   resultNumberElement.style.color = "";
-
   resultNumberElement.value = result;
-
   resultNumberElement.addEventListener("click", function() {
     resultNumberElement.style.color = "green";
     resultNumberElement.value = "Copied";
