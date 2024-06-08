@@ -24,7 +24,7 @@ function converttexttocode(text) {
     Y: 29,
     W: "W"
   };
-// thuật toán có quy tắc giống cái code C++ A counter lớp 8 trước m gửi - nó bắt đầu từ i = 0 rồi quét từng chữ
+
   let encodedtext = "";
   for (let i = 0; i < text.length; i++) {
     const character = text[i].toUpperCase();
@@ -42,11 +42,16 @@ function converttexttocode(text) {
 function handleinput() {
   const inputText = document.getElementById("input-text").value;
   const result = converttexttocode(inputText);
-  document.getElementById("result-number").value = result;
-//click to copy (lướt W3schools để xem)
-    const resultNumberElement = document.getElementById("result-number");
-    resultNumberElement.addEventListener("click", function() {
-        navigator.clipboard.writeText(result);
-        alert("Đã sao chép vào bộ nhớ tạm!");
-    });
-  }
+  const resultNumberElement = document.getElementById("result-number");
+  resultNumberElement.value = result;
+  resultNumberElement.addEventListener("click", function() {
+    resultNumberElement.style.color = "green";
+    resultNumberElement.value = "Copied";
+    navigator.clipboard.writeText(result)
+      .then(() => {
+      })
+      .catch(err => {
+        console.error("Error:", err);
+      });
+  });
+}
