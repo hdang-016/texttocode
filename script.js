@@ -9,20 +9,23 @@ function converttexttocode(text) {
     G: 9,
     H: 76,
     I: 1,
+    J: "J",
     K: 14,
-    N: 11,
+    L: "L",
     M: 111,
-    U: 12,
+    N: 11,
     O: 0,
     P: 10,
     Q: "01",
     R: 92,
     S: 5,
     T: 7,
+    U: 12,
     V: 22,
+    W: "W",
     X: 26,
     Y: 29,
-    W: "W"
+    Z: "Z"
   };
 
   let encodedtext = "";
