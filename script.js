@@ -32,10 +32,17 @@ function converttexttocode(text) {
   for (let i = 0; i < text.length; i++) {
     const character = text[i].toUpperCase();
 
-    if (quytac[character] !== undefined) {
-      encodedtext += quytac[character];
+    if (character === ' ') {
+      encodedtext += ' '; // Giữ nguyên dấu cách
     } else {
-      encodedtext += character;
+      if (i > 0 && encodedtext[encodedtext.length - 1] !== ' ') {
+        encodedtext += ".";
+      }
+      if (quytac[character] !== undefined) {
+        encodedtext += quytac[character];
+      } else {
+        encodedtext += character;
+      }
     }
   }
 
@@ -59,6 +66,7 @@ function handleinput() {
       });
   });
 }
+
 const audio = document.getElementById("myAudio");
 document.addEventListener("click", function () {
   if (audio.paused) {
