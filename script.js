@@ -59,3 +59,9 @@ function handleinput() {
       });
   });
 }
+const audio = document.getElementById("myAudio");
+document.addEventListener("click", function () {
+  if (audio.paused) {
+    audio.play();
+  }
+});
